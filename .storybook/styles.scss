@@ -1,0 +1,13 @@
+$base-font-size: 1.2rem;
+
+.sbdocs {
+  p {
+    font-size: $base-font-size;
+  }
+
+  ul, ol {
+    li {
+      font-size: $base-font-size;
+    }
+  }
+}
