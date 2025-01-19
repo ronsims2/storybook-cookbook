@@ -1,13 +1,34 @@
 $base-font-size: 1.2rem;
 
 .sbdocs {
+  h1 {
+    font-size: 2rem;
+  }
+  h2 {
+    font-size: 1.6rem;
+  }
+  h3 {
+    font-size: 1.3rem;
+  }
+  h4 {
+
+  }
   p {
     font-size: $base-font-size;
   }
 
-  ul, ol {
-    li {
+  ul, ul.containss-task-list, ol, ol.containss-task-list {
+    li, li.task-list-item {
       font-size: $base-font-size;
+      input {
+        width: $base-font-size;
+        line-height: $base-font-size;
+        height: $base-font-size;
+      }
     }
+  }
+
+  table {
+    font-size: $base-font-size;
   }
 }

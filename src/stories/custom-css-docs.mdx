@@ -1,0 +1,51 @@
+import {Meta} from '@storybook/blocks'
+
+<Meta title="Custom CSS/Documents" />
+
+# Custom styles
+
+# Fonts
+
+It can be tricky to adjust the font size for documents. While themes and decorators work well for stories, the API doesn't extend to documents (MDX).
+To apply custom styles, [add a custom stylesheet](https://storybook.js.org/docs/configure/styling-and-css#import-bundled-css-recommended) to Storybook and target the selectors (class names and elements) that you find by inspecting the DOM.
+
+```
+// .storybook/preview.ts
+
+import '../src/styles/global.css';
+```
+
+⚠️ This approach is considered advanced and is not officially supported (although mention in their docs as an [escape hatch](https://storybook.js.org/docs/configure/user-interface/theming#css-escape-hatches)).
+
+You can use SASS to quickly build a style hierarchy based that targets the content in a MDX doc. Currently.
+The `font-size` of this document is effectively increase by targeting elements that descend from `.sbodcs`.
+
+📝 If you want to use SASS as a CSS solution (liek this example does), install `sass-embedded`
+
+```
+npm i sass-embedded -D
+```
+
+### Custom styles applied to lists
+
+1. foo
+2. bar
+3. baz
+
+- foo
+- bar
+- baz
+
+### Custom styles applied to special lists
+
+- [x] foo
+- [ ] bar
+- [ ] baz
+
+### Custom styles applied to tables
+
+| Foo | Bar | Baz  |
+| --- | --- | ---- |
+| 42  | 99  | 105  |
+| 3   | 6   | 9    |
+| 50  | 11  | 1000 |
