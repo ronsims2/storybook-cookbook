@@ -1,0 +1,11 @@
+import {Meta} from '@storybook/blocks'
+
+<Meta title="Organization/Documents" />
+
+# Organizing Documentation
+
+## Ordering (sorting) unattached documents
+
+The order of the items in the sidebar can be controlled by setting the `Preview.parameters.options.storySort.order` in the [.storybook.preview.ts](https://github.com/ronsims2/storybook-cookbook/blob/bf37b71b6928079ab250de1a700d6754193d09f5/.storybook/preview.ts) file.
+The order is an array of case-sensitive titles.
+While the sidebar section titles may appear upper-cased, it should be listed in the casing found in the documentation's title source code.
