@@ -1,0 +1,36 @@
+import {Meta} from '@storybook/blocks'
+
+<Meta title="Organization/Hiding documents" />
+
+# Hiding Documents
+
+To hide a document for the sidebar, you can use a tag to apply a filter.
+
+```
+/**
+* manager.ts
+*/
+import {addons} from '@storybook/manager-api'
+
+addons.setConfig({
+  sidebar: {
+    filters: {
+      patterns: item => {
+        const {tags = []} = item
+        console.table(item)
+        return !tags.includes('hidden-item')
+      },
+    },
+    collapsedRoots: ['Top Secret'],
+  },
+})
+```
+
+In the document that should be hidden, add the `hidden-item` to the tag property in the Meta tag.
+
+```
+<Meta title='Foobar' tags={['hidden-item']} />
+```
+
+In this project, the [`organization-docs.mdx`](https://github.com/ronsims2/storybook-cookbook/blob/0fe7a576a010d22e034b32ef6d7978a407986e53/src/stories/organization-docs.mdx) document is hidden using this technique.
+It can be seen at [this URL](?path=/docs/top-secret-document-a--docs).
