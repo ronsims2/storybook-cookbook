@@ -1,7 +1,7 @@
 export class ManagerConfigBuilder {
   #managerConfig
-  constructor() {
-    this.#managerConfig = {}
+  constructor(config) {
+    this.#managerConfig = structuredClone(config) ?? {}
   }
 
   /**
