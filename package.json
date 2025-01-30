@@ -47,5 +47,8 @@
     "extends": [
       "plugin:storybook/recommended"
     ]
-  }
+  },
+  "workspaces": [
+    "packages/talltales"
+  ]
 }
