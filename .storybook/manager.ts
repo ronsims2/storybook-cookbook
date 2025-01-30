@@ -5,7 +5,6 @@ addons.setConfig({
     filters: {
       patterns: item => {
         const {tags = []} = item
-        console.table(item)
         return !tags.includes('hidden-item')
       },
     },

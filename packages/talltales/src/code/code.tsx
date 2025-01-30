@@ -9,18 +9,24 @@ export function CodeBlock(props) {
 }
 
 export class CodeBlockBuilder {
-  constructor(initLn) {
-    this.lines = []
+  #lines
+  #sep
+  constructor(initLn, sep = '\n') {
+    this.#lines = []
+    this.#sep = sep
     if (initLn) {
       this.lines.push(initLn)
     }
   }
 
   addLine(ln) {
-    this.lines.push(ln ?? '\n')
+    this.#lines.push(ln ?? this.#sep)
     return this
   }
   toString() {
-    lines.join('\n')
+    return this.#lines.join(this.#sep)
+  }
+  build() {
+    return this.toString()
   }
 }
